@@ -19,8 +19,11 @@
 > npx tsc --init
 
 ### Add to the TS Config
->     "moduleResolution":"nodenext",
+>     "moduleResolution":"bundler",
 >     "esModuleInterop": true,
+
+### Change the TS Config
+>     "module": "es2022",
 
 ### Modify *TS Config* **verbatimModuleSyntax** to **false**
 >     "verbatimModuleSyntax": false,
