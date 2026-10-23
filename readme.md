@@ -34,4 +34,5 @@
 >     "start": "node dist/index.js",
 
 ### Add Include tp the *TS Config* at the end
->     "include": ["src/**/*"]
+>     "include": ["src/**/*"],
+>     "exclude": ["node_modules", "dist"]
