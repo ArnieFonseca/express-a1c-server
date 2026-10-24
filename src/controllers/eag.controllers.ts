@@ -1,4 +1,4 @@
-import { Router, Request, Response } from "express"
+import { Request, Response } from "express"
 import { z } from "zod"
 import { HttpStatusCodes, a1c } from "../common/common"
 
@@ -10,7 +10,9 @@ const eagParamsSchema = z.object({
   id: z.coerce.number().int().positive(),
 })
 
- 
+/**
+ * Calculate the A1C from the EAG
+ */ 
 export const calculateEAG = function(req: Request, res: Response) {
   // Try to convert param to number
   const result = eagParamsSchema.safeParse(req.params)

@@ -20,3 +20,12 @@ export const a1c = (eAG:number) => {
     ((eAG + OFFSET_FACTOR) / DIVISION_FACTOR).toFixed(ONE_DECIMAL_PLACE),
   )
 }
+
+/**
+ * Route Paths to be mounted
+ */
+export class RoutesPaths {
+  static Empty = ""
+  static Health = "/health"
+  static EAG = "/eag"
+}
