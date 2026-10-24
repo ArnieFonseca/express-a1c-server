@@ -1,11 +1,12 @@
 
-import { Router, Request, Response } from "express"
+import { Router } from "express"
 import {checkHealth} from '../controllers/health.controllers'
+import { RoutesPaths } from "../common/common";
 
 // Instantiate Express Router
-const router = Router()
+export const router = Router()
 
-router.get("/", checkHealth);
+router.get(RoutesPaths.Root, checkHealth);
 
-export default router
+ 
 

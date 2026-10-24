@@ -28,4 +28,14 @@ export class RoutesPaths {
   static Empty = ""
   static Health = "/health"
   static EAG = "/eag"
+  static Root = "/"
+  static QueryById = "/:id"
+}
+
+/**
+ * Timestamp to String
+ */
+export const timeStampToString = (ts?:Date):string => {  
+  const swedenTimeZone = 'sv-SE'
+  return `${ts?.toLocaleDateString(swedenTimeZone)}.${ts?.toLocaleTimeString(swedenTimeZone)}`
 }

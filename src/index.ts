@@ -3,8 +3,9 @@
  */
 import express from 'express'
 import {RoutesPaths} from './common/common'
-import routesEag from "./routes/eag.routes"
-import routesHealth from "./routes/health.routes"
+import {healthRouter,eagRouter} from "./routes" 
+import {addTimestamp,logger} from './middlewares'
+ 
 
 // Instantiate the Express Application
 const app = express()
@@ -15,11 +16,14 @@ const PORT = 3000
 // Instructs Express to use JSON
 app.use(express.json())
 
+// Wire middleware function
+app.use(addTimestamp)
+app.use(logger)
+
 // Mount Routes
-app.use(RoutesPaths.Empty, routesHealth)
-app.use(RoutesPaths.Health, routesHealth)
-app.use(RoutesPaths.EAG, routesEag)
- 
+app.use(RoutesPaths.Empty, healthRouter)
+app.use(RoutesPaths.Health, healthRouter)
+app.use(RoutesPaths.EAG, eagRouter) 
 
 /** Start server in the  defined port number */
 app.listen(PORT, () => {

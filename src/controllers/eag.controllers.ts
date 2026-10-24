@@ -2,6 +2,7 @@ import { Request, Response } from "express"
 import { z } from "zod"
 import { HttpStatusCodes, a1c } from "../common/common"
 
+
 /**
  * Schema for URL parameters.
  * Must be Positive Integer
@@ -32,4 +33,5 @@ export const calculateEAG = function(req: Request, res: Response) {
 
   // Send back replay
   res.status(HttpStatusCodes.OK).json(replay)
+  
 }
