@@ -5,7 +5,7 @@ import express, { Request, Response } from 'express'
 
 import {HttpStatusCodes} from './common/common'
 
-import apiRoutesEag from "./routes/eag.routes"
+import routesEag from "./routes/eag.routes"
 
 
 // Instantiate the Express Application
@@ -26,7 +26,7 @@ app.get("/", (req:Request, res:Response) => {
 })
 
 // Mounter EAG Routes
-app.use("/", apiRoutesEag);
+app.use("/eag", routesEag);
  
 
 /** Start server in the  defined port number */
