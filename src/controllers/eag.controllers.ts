@@ -11,11 +11,14 @@ const eagParamsSchema = z.object({
   id: z.coerce.number().int().positive(),
 })
 
-/**
+/** Controller for EAG to A1C */
+export class EAGController {
+ 
+  /**
  * Calculate the A1C from the EAG
- */ 
-export const calculateEAG = function(req: Request, res: Response) {
-  // Try to convert param to number
+ */
+  public static calculateEAG(req: Request, res: Response) {
+      // Try to convert param to number
   const result = eagParamsSchema.safeParse(req.params)
 
   if (!result.success) {
@@ -34,4 +37,5 @@ export const calculateEAG = function(req: Request, res: Response) {
   // Send back replay
   res.status(HttpStatusCodes.OK).json(replay)
   
+  }
 }

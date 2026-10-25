@@ -6,7 +6,6 @@ import {RoutesPaths} from './common/common'
 import {healthRouter,eagRouter} from "./routes" 
 import {addTimestamp,logger} from './middlewares'
  
-
 // Instantiate the Express Application
 const app = express()
 
